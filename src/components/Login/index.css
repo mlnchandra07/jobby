@@ -7,8 +7,8 @@
 }
 .form-container {
   background-color: #272727;
-  height: 40%;
-  width: 25%;
+  height: 300px;
+  width: 400px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
