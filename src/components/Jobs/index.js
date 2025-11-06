@@ -284,56 +284,59 @@ class Jobs extends Component {
       <>
         <Header />
         <div className="jobs-container">
-          {this.renderProfileDetails()}
-          <hr />
-          <div>
-            <h1>Type of Employment</h1>
-            <ul>
-              {employmentTypesList.map(each => (
-                <li className="employee-item" key={each.employmentTypeId}>
-                  <input
-                    type="checkbox"
-                    id={each.employmentTypeId}
-                    value={each.employmentTypeId}
-                    onChange={this.onChangeEmployeType}
-                  />
-                  <label
-                    htmlFor={each.employmentTypeId}
-                    className="check-label"
-                  >
-                    {each.label}
-                  </label>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h1>Salary Range</h1>
-            <ul>
-              {salaryRangesList.map(each => (
-                <li className="salary-item" key={each.salaryRangeId}>
-                  <input
-                    type="radio"
-                    id={each.salaryRangeId}
-                    value={each.salaryRangeId}
-                    name="salary"
-                    className="check-input"
-                    onChange={this.onChangeSalary}
-                  />
-                  <label htmlFor={each.salaryRangeId} className="check-label">
-                    {each.label}
-                  </label>
-                </li>
-              ))}
-            </ul>
+          <div className="profile-section">
+            {this.renderProfileDetails()}
+            <hr className="line" />
+            <div>
+              <h1 className="type">Type of Employment</h1>
+              <ul className="filter-list">
+                {employmentTypesList.map(each => (
+                  <li className="employee-item" key={each.employmentTypeId}>
+                    <input
+                      type="checkbox"
+                      id={each.employmentTypeId}
+                      value={each.employmentTypeId}
+                      onChange={this.onChangeEmployeType}
+                    />
+                    <label
+                      htmlFor={each.employmentTypeId}
+                      className="check-label"
+                    >
+                      {each.label}
+                    </label>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <hr className="line" />
+            <div>
+              <h1 className="salary-range">Salary Range</h1>
+              <ul className="filter-list">
+                {salaryRangesList.map(each => (
+                  <li className="salary-item" key={each.salaryRangeId}>
+                    <input
+                      type="radio"
+                      id={each.salaryRangeId}
+                      value={each.salaryRangeId}
+                      name="salary"
+                      className="check-input"
+                      onChange={this.onChangeSalary}
+                    />
+                    <label htmlFor={each.salaryRangeId} className="check-label">
+                      {each.label}
+                    </label>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
           <div className="jobs-content">
-            <div className="search-input-jobs-list-container">
-              <div className="search-input-container-desktop">
+            <div className="search-input-jobs">
+              <div className="search-input-container">
                 <input
                   type="search"
                   value={searchInput}
-                  className="search-input-desktop"
+                  className="search-input"
                   placeholder="Search"
                   onChange={this.changeSearchInput}
                   onKeyDown={this.onEnterSearchInput}
@@ -341,7 +344,7 @@ class Jobs extends Component {
                 <button
                   type="button"
                   data-testid="searchButton"
-                  className="search-button-container-desktop"
+                  className="search-button"
                   onClick={this.getJobs}
                 >
                   <BsSearch className="search-icon-desktop" />

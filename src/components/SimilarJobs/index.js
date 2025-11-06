@@ -8,33 +8,33 @@ import './index.css'
 const SimilarJobs = props => {
   const {eachElement} = props
   return (
-    <li className="li">
-      <div className="SimilarFlex">
+    <li className="similar-job">
+      <div className="logo-role">
         <div>
           <img
-            className="SimilarJobs"
+            className="company-logo"
             src={eachElement.company_logo_url}
             alt="similar job company logo"
           />
         </div>
         <div>
-          <h1 className="SimilarTitle">{eachElement.title}</h1>
+          <h1 className="title">{eachElement.title}</h1>
           <p>
             <FaStar className="Star" />
             &nbsp;{eachElement.rating}
           </p>
         </div>
       </div>
-      <h1>Description</h1>
-      <p>{eachElement.job_description}</p>
-      <div className="FlexLocationSimilar">
-        <p>
+      <h1 className="description">Description</h1>
+      <p className="description-text">{eachElement.job_description}</p>
+      <div className="job-detail">
+        <p className="location">
           <IoLocationOutline />
-          &nbsp;{eachElement.location}
+          {eachElement.location}
         </p>
-        <p>
+        <p className="type">
           <BsBriefcaseFill />
-          &nbsp;{eachElement.employment_type}
+          {eachElement.employment_type}
         </p>
       </div>
     </li>

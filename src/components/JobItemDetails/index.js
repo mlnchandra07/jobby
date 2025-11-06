@@ -96,28 +96,27 @@ class JobItemDetails extends Component {
     const {jobCard, skill, similarJobs} = this.state
 
     return (
-      <div className="DetailsOfSingleJob">
-        <div className="detailsOfSmallScreens">
-          <div className="SingleJobImageFlex">
+      <div className="detailsOfJob">
+        <div className="details-card">
+          <div className="company-role">
             <div>
               <img
-                className="ImageOfSingleJob"
+                className="company-logo"
                 src={jobCard.companyLogo}
                 alt="job details company logo"
               />
             </div>
-            <div className="StarFlexSingle">
-              <h1>{jobCard.title}</h1>
+            <div className="">
+              <h1 className="role">{jobCard.title}</h1>
               <p>
-                <FaStar className="Stars" />
-                &nbsp;&nbsp;
+                <FaStar className="rating-logo" />
                 {jobCard.rating}
               </p>
             </div>
           </div>
-          <div className="LocationSingleJob">
-            <div className="employeSingle">
-              <p>
+          <div className="job-details">
+            <div className="location-type">
+              <p className="location">
                 <IoLocationOutline />
                 {jobCard.location}
               </p>
@@ -131,23 +130,21 @@ class JobItemDetails extends Component {
             </div>
           </div>
           <hr />
-          <div className="DiscriptionFlex">
-            <h1>Description</h1>
+          <div className="discription-visit">
+            <h1 className="des-heading">Description</h1>
             <div className="Visit">
-              <a className="anchor" href={jobCard.companyWebSite}>
+              <a className="link" href={jobCard.companyWebSite}>
                 Visit
               </a>
-              &nbsp;
               <FaShareSquare className="Share" />
-              &nbsp;
             </div>
           </div>
-          <p>{jobCard.description}</p>
+          <p className="discription">{jobCard.description}</p>
 
-          <h1>Skills</h1>
-          <ul className="flexingJobsSkills">
+          <h1 className="skill-heading">Skills</h1>
+          <ul className="skills-list">
             {skill.map(each => (
-              <li className="eachSkill" key={each.id}>
+              <li className="skill" key={each.id}>
                 <img
                   className="ImageOfEachSkill"
                   src={each.imageSkill}
@@ -157,14 +154,14 @@ class JobItemDetails extends Component {
               </li>
             ))}
           </ul>
-          <div className="LifeAtFlex">
-            <div className="LifeAtCompany">
-              <h1>Life at Company</h1>
-              <p>{jobCard.lifeAt}</p>
+          <div className="life">
+            <div className="lifeAtCompany">
+              <h1 className="life-heading">Life at Company</h1>
+              <p className="life-discription">{jobCard.lifeAt}</p>
             </div>
             <div>
               <img
-                className="lifeAtCompanySmallScreens"
+                className="lifeAtCompanyImg"
                 src={jobCard.imageLifeAt}
                 alt="life at company"
               />
@@ -172,8 +169,8 @@ class JobItemDetails extends Component {
           </div>
         </div>
         <div>
-          <h1 className="SimilarJobsHeadingSmallScreens">Similar Jobs</h1>
-          <ul className="ul">
+          <h1 className="heading">Similar Jobs</h1>
+          <ul className="similar-list">
             {similarJobs.map(each => (
               <SimilarJobs eachElement={each} key={each.id} />
             ))}

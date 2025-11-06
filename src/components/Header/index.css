@@ -1,0 +1,35 @@
+.header {
+  background-color: #272727;
+  height: 10vh;
+  margin-top: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px;
+}
+.list-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  list-style-type: none;
+}
+.logo {
+  height: 30px;
+  width: 80px;
+}
+.category {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 16px;
+  text-decoration: none;
+  margin-left: 40px;
+}
+.logout-button {
+  background-color: #4f46e5;
+  height: 32px;
+  width: 120px;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  font-family: 'Roboto';
+  font-size: 16px;
+}

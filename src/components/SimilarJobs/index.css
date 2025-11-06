@@ -1,0 +1,40 @@
+.similar-job {
+  background-color: #272727;
+  padding: 20px;
+  width: 350px;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+.logo-role {
+  display: flex;
+  align-items: center;
+}
+.company-logo {
+  height: 80px;
+}
+.title {
+  font-family: 'Roboto';
+  font-size: 16px;
+}
+.Star {
+  color: #fbbf24;
+}
+.description {
+  font-family: 'Roboto';
+  font-size: 20px;
+}
+.description-text {
+  font-family: 'Roboto';
+  font-size: 16px;
+}
+.job-detail {
+  display: flex;
+}
+.location {
+  display: flex;
+  align-items: center;
+}
+.type {
+  display: flex;
+  align-items: center;
+}
