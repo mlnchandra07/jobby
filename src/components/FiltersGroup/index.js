@@ -113,6 +113,42 @@ const FiltersGroup = props => {
     )
   }
 
+  const renderLocationOfEmployment = () => {
+    const {employmentJobLocation} = props
+    return (
+      <div className="employment-type-container">
+        <h1 className="employment-type-heading">Location</h1>
+        <ul className="employment-type-list-container">
+          {employmentJobLocation.map(eachEmployeeJobLocation => {
+            const {changeEmployeeList} = props
+            const onSelectEmployeeType = event => {
+              changeEmployeeList(event.target.value)
+            }
+            return (
+              <li
+                className="employee-item"
+                key={eachEmployeeType.employmentTypeId}
+                onChange={onSelectEmployeeType}
+              >
+                <input
+                  type="checkbox"
+                  id={eachEmployeeType.employmentTypeId}
+                  onChange={onSelectEmployeeType}
+                />
+                <label
+                  htmlFor={eachEmployeeType.employmentTypeId}
+                  className="check-label"
+                >
+                  {eachEmployeeType.label}
+                </label>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
+    )
+  }
+
   return (
     <div className="filters-group-container">
       {renderSearchInput()}
